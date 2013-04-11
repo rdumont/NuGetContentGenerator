@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseReplacementDefinitionsExtractor.cs" />
     <Compile Include="CsReplacementDefinitionsExtractor.cs" />
     <Compile Include="IReplacementDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

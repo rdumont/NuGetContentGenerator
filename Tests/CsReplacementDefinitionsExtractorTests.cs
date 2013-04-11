@@ -86,8 +86,11 @@ contents";
         [TestCase("\t*  replacement line")]
         public void Get_replacement_line(string originalLine)
         {
+            // Arrange
+            var extractor = new TestableCsExtractor();
+
             // Act
-            var result = TestableCsExtractor.GetReplacementLine(originalLine);
+            var result = extractor.GetReplacementLine(originalLine);
 
             // Assert
             Assert.That(result, Is.EqualTo("replacement line"));
@@ -100,8 +103,11 @@ contents";
         [TestCase(" \t /** @pp")]
         public void Is_start_of_block(string originalLine)
         {
+            // Arrange
+            var extractor = new TestableCsExtractor();
+
             // Act
-            var isStartOfBlock = TestableCsExtractor.IsStartOfBlock(originalLine);
+            var isStartOfBlock = extractor.IsStartOfBlock(originalLine);
 
             Console.WriteLine(originalLine.Trim(' ', '\t'));
 
@@ -115,31 +121,16 @@ contents";
         [TestCase("\t*/")]
         public void Is_end_of_block(string originalLine)
         {
+            // Arrange
+            var extractor = new TestableCsExtractor();
+
             // Act
-            var isEndOfBlock = TestableCsExtractor.IsEndOfBlock(originalLine);
+            var isEndOfBlock = extractor.IsEndOfBlock(originalLine);
 
             Console.WriteLine(originalLine.Trim(' ', '\t'));
 
             // Assert
             Assert.That(isEndOfBlock, Is.True);
-        }
-    }
-
-    public class TestableCsExtractor : CsReplacementDefinitionsExtractor
-    {
-        public new static string GetReplacementLine(string line)
-        {
-            return CsReplacementDefinitionsExtractor.GetReplacementLine(line);
-        }
-
-        public new static bool IsStartOfBlock(string line)
-        {
-            return CsReplacementDefinitionsExtractor.IsStartOfBlock(line);
-        }
-
-        public new static bool IsEndOfBlock(string line)
-        {
-            return CsReplacementDefinitionsExtractor.IsEndOfBlock(line);
         }
     }
 }
