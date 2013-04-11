@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BaseReplacementDefinitionsExtractor.cs" />
     <Compile Include="Generator.cs" />
+    <Compile Include="NuGetContentGenerator.cs" />
     <Compile Include="CsReplacementDefinitionsExtractor.cs" />
     <Compile Include="IReplacementDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

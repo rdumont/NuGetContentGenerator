@@ -1,44 +1,34 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using System.Text;
-using Microsoft.VisualStudio;
-using Microsoft.VisualStudio.Shell.Interop;
-
-namespace RDumont.NugetContentGenerator.Runtime
+﻿namespace RDumont.NugetContentGenerator.Runtime
 {
+    using System;
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
 
-    public class Generator : IVsSingleFileGenerator
+    public class Generator
     {
-        public int DefaultExtension(out string pbstrDefaultExtension)
+        public string Generate(string inputPath, string inputContents)
         {
-            pbstrDefaultExtension = ".pp";
-            return pbstrDefaultExtension.Length;
+            var extension = GetExtensionFromFilePath(inputPath);
+            return Transform(inputContents, extension);
         }
 
-        public int Generate(string wszInputFilePath, string bstrInputFileContents, string wszDefaultNamespace,
-            IntPtr[] rgbOutputFileContents, out uint pcbOutput, IVsGeneratorProgress pGenerateProgress)
+        public Dictionary<string, string> GetReplacements(string definitionsBlock)
         {
-            try
-            {
-                var extension = GetExtensionFromFilePath(wszInputFilePath);
-                var contents = Transform(bstrInputFileContents, extension);
+            var lines = definitionsBlock.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            var result = new Dictionary<string, string>();
 
-                var bytes = Encoding.UTF8.GetBytes(contents);
-                var length = bytes.Length;
-                rgbOutputFileContents[0] = Marshal.AllocCoTaskMem(length);
-                Marshal.Copy(bytes, 0, rgbOutputFileContents[0], length);
-                pcbOutput = (uint) length;
-
-                return VSConstants.S_OK;
-            }
-            catch (Exception ex)
+            foreach (var line in lines)
             {
-                pGenerateProgress.GeneratorError(0, 1, ex.ToString(), 0, 0);
-                pcbOutput = 0;
-                return VSConstants.S_FALSE;
+                var match = Regex.Match(line, @"^(?<token>\w+):\s+(?<value>.+)$");
+                if (!match.Success)
+                {
+                    throw new InvalidOperationException(
+                        string.Format("Invalid replacement definition line: \"{0}\"", line));
+                }
+                result.Add(match.Groups["token"].Value, match.Groups["value"].Value);
             }
+
+            return result;
         }
 
         public string Transform(string contents, string extension)
@@ -61,23 +51,9 @@ namespace RDumont.NugetContentGenerator.Runtime
             return contents;
         }
 
-        public Dictionary<string, string> GetReplacements(string definitionsBlock)
+        public string GetExtensionFromFilePath(string filePath)
         {
-            var lines = definitionsBlock.Split(new[] {'\r', '\n'}, StringSplitOptions.RemoveEmptyEntries);
-            var result = new Dictionary<string, string>();
-
-            foreach (var line in lines)
-            {
-                var match = Regex.Match(line, @"^(?<token>\w+):\s+(?<value>.+)$");
-                if (!match.Success)
-                {
-                    throw new InvalidOperationException(
-                        string.Format("Invalid replacement definition line: \"{0}\"", line));
-                }
-                result.Add(match.Groups["token"].Value, match.Groups["value"].Value);
-            }
-
-            return result;
+            return Regex.Match(filePath, "\\w+$").Value;
         }
 
         private IReplacementDefinitionsExtractor GetExtractorForExtension(string extension)
@@ -91,11 +67,6 @@ namespace RDumont.NugetContentGenerator.Runtime
                     throw new InvalidOperationException(
                         string.Format("Don't know how to transform file with '.{0}' extension", extension));
             }
-        }
-
-        public string GetExtensionFromFilePath(string filePath)
-        {
-            return Regex.Match(filePath, "\\w+$").Value;
         }
     }
 }

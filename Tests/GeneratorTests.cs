@@ -3,7 +3,6 @@ using NUnit.Framework;
 
 namespace RDumont.NugetContentGenerator.Runtime.Tests
 {
-
     [TestFixture]
     public class GeneratorTests
     {
