@@ -16,7 +16,7 @@
     </releaseNotes>
   </metadata>
   <files>
-    <file src="bin\Release\RDumont.NuGetContentGenerator.Runtime.dll" target="lib\net45" />
-    <file src="bin\Release\RDumont.NuGetContentGenerator.Runtime.xml" target="lib\net45" />
+    <file src="bin\Release\NuGetContentGenerator.dll" target="lib\net45" />
+    <file src="bin\Release\NuGetContentGenerator.xml" target="lib\net45" />
   </files>
 </package>
