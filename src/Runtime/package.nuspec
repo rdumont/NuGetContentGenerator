@@ -14,9 +14,13 @@
     <releaseNotes>
         Initial release
     </releaseNotes>
+      <dependencies>
+          <dependency id="NuGetPowerTools" version="0.26" />
+      </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\NuGetContentGenerator.dll" target="lib\net45" />
-    <file src="bin\Release\NuGetContentGenerator.xml" target="lib\net45" />
+    <file src="bin\Release\NuGetContentGenerator.dll" target="tools" />
+    <file src="tools\*.*" target="tools" />
+    <file src="content\readme.txt" target="content" />
   </files>
 </package>
