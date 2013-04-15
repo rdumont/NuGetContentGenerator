@@ -72,3 +72,20 @@ namespace $rootnamespace$.Models {
 ```
 
 You can define as many replacements as you would like, one in each line. The only restriction is that the comment section for defining these replacements **must be** the first thing in the file.
+
+How do I install it?
+--------------------
+
+You can install it from NuGet, by looking for the `NuGetContentGenerator` package or running the following command in the Package Manager Console:
+
+    PM> Install-Package NuGetContentGenerator
+    
+The package will then be installed and the project will automatically import the needed MSBuild targets. All that is left to do is build your project to see every `content\**\*.cs` be transformed to its NuGet content representation as `content\**\*.cs.pp`.
+
+Don't forget to add your content files to the Nuspec. Ideally, given the `.nuspec` is at the same level as the project, the content should be added as follows:
+
+```xml
+<files>
+  <file src="content\**\*.pp" target="content" />
+</files>
+```
