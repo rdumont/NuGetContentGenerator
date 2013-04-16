@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <UsingTask AssemblyFile="$(SolutionDir)\tools\NugetContentGenerator.dll" TaskName="NuGetContent" />
-  <Target Name="TransformNuGetContent" BeforeTargets="Build">
+  <Target Name="TransformNuGetContent" BeforeTargets="Build" Condition="'$(NCrunch)' == ''">
     <ItemGroup>
       <NuGetContentFiles Include="Content\**\*" />
     </ItemGroup>
