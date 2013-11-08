@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseReplacementDefinitionsExtractor.cs" />
+    <Compile Include="CsHtmlReplacementDefinitionsExtractor.cs" />
     <Compile Include="Generator.cs" />
     <Compile Include="CsReplacementDefinitionsExtractor.cs" />
     <Compile Include="IReplacementDefinition.cs" />
