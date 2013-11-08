@@ -4,7 +4,8 @@
   <Target Name="TransformNuGetContent" BeforeTargets="Build" Condition="'$(NCrunch)' == ''">
     <ItemGroup>
       <NuGetContentFiles Condition=" '@(NuGetContentFiles)' == '' " Include="Content\**\*" />
+      <NuGetContentExtensions Include=".cs" />
     </ItemGroup>
-    <NuGetContent Files="@(NuGetContentFiles)" />
+    <NuGetContent Files="@(NuGetContentFiles)" Extensions="@(NuGetContentExtensions)" />
   </Target>
 </Project>

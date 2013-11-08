@@ -55,16 +55,16 @@ contents";
         }
 
         [Test]
-        public void Should_not_find_definitions_after_content()
+        public void Should_find_definitions_after_content()
         {
             // Arrange
             var text = @"
-this breaks the definitions
+<xml>
 <!-- @pp
   replacement 1
   replacement 2
  -->
-contents";
+</xml>";
             var extractor = new XmlReplacementDefinitionsExtractor();
 
             // Act
@@ -72,8 +72,8 @@ contents";
             var result = extractor.ExtractReplacementDefinitions(text, out definitions);
 
             // Assert
-            Assert.That(result, Is.EqualTo(text));
-            Assert.That(definitions, Is.EqualTo(null));
+            Assert.That(result, Is.EqualTo("<xml>\r\n</xml>"));
+            Assert.That(definitions, Is.EqualTo("replacement 1\r\nreplacement 2\r\n"));
         }
 
         [TestCase("replacement line")]
@@ -83,7 +83,7 @@ contents";
         public void Get_replacement_line(string originalLine)
         {
             // Arrange
-            var extractor = new TestableXmlExtractor();
+            var extractor = new XmlReplacementDefinitionsExtractor();
 
             // Act
             var result = extractor.GetReplacementLine(originalLine);
@@ -100,7 +100,7 @@ contents";
         public void Is_start_of_block(string originalLine)
         {
             // Arrange
-            var extractor = new TestableXmlExtractor();
+            var extractor = new XmlReplacementDefinitionsExtractor();
 
             // Act
             var isStartOfBlock = extractor.IsStartOfBlock(originalLine);
@@ -118,7 +118,7 @@ contents";
         public void Is_end_of_block(string originalLine)
         {
             // Arrange
-            var extractor = new TestableXmlExtractor();
+            var extractor = new XmlReplacementDefinitionsExtractor();
 
             // Act
             var isEndOfBlock = extractor.IsEndOfBlock(originalLine);

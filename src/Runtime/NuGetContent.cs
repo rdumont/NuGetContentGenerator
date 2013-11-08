@@ -14,12 +14,17 @@
         [Required]
         public string[] Files { get; set; }
 
+        public string[] Extensions { get; set; }
+
         public override bool Execute()
         {
             var generator = new Generator();
             var root = Environment.CurrentDirectory;
+
+            if (Extensions == null || Extensions.Length == 0)
+                throw new ArgumentNullException("Extensions", "Please include at least one extension eg. <Extension Include='.cs'>");
             
-            foreach (var file in Files.Where(f => f.EndsWith(".cs")))
+            foreach (var file in Files.Where(f => Extensions.Any(ex => f.EndsWith(ex))))
             {
                 var fullPath = Path.Combine(root, file);
                 var contents = File.ReadAllText(fullPath);
