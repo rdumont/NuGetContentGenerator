@@ -14,6 +14,9 @@
 
         public Dictionary<string, string> GetReplacements(string definitionsBlock)
         {
+            if (string.IsNullOrWhiteSpace(definitionsBlock))
+                return new Dictionary<string, string>();
+
             var lines = definitionsBlock.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             var result = new Dictionary<string, string>();
 
