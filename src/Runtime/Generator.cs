@@ -66,6 +66,10 @@
                 case "cshtml":
                     return new CsHtmlReplacementDefinitionsExtractor();
 
+                case "xml":
+                case "config":
+                    return new XmlReplacementDefinitionsExtractor();
+
                 default:
                     throw new InvalidOperationException(
                         string.Format("Don't know how to transform file with '.{0}' extension", extension));

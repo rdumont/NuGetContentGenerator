@@ -52,6 +52,7 @@
     <Compile Include="IReplacementDefinition.cs" />
     <Compile Include="NuGetContent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlReplacementDefinitionsExtractor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="package.nuspec" />
