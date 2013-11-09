@@ -46,11 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseReplacementDefinitionsExtractor.cs" />
+    <Compile Include="CsHtmlReplacementDefinitionsExtractor.cs" />
     <Compile Include="Generator.cs" />
     <Compile Include="CsReplacementDefinitionsExtractor.cs" />
     <Compile Include="IReplacementDefinition.cs" />
     <Compile Include="NuGetContent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlReplacementDefinitionsExtractor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="package.nuspec" />

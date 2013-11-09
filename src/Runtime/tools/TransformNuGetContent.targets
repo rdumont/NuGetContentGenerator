@@ -3,8 +3,9 @@
   <UsingTask AssemblyFile="$(SolutionDir)\tools\NugetContentGenerator.dll" TaskName="NuGetContent" />
   <Target Name="TransformNuGetContent" BeforeTargets="Build" Condition="'$(NCrunch)' == ''">
     <ItemGroup>
-      <NuGetContentFiles Include="Content\**\*" />
+      <NuGetContentFiles Condition=" '@(NuGetContentFiles)' == '' " Include="Content\**\*" />
+      <NuGetContentExtensions Include=".cs" />
     </ItemGroup>
-    <NuGetContent Files="@(NuGetContentFiles)" />
+    <NuGetContent Files="@(NuGetContentFiles)" Extensions="@(NuGetContentExtensions)" />
   </Target>
 </Project>
