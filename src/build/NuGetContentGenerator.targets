@@ -6,7 +6,7 @@
   <UsingTask AssemblyFile="@(AssemblyFile)" TaskName="NuGetContent" />
   <Target Name="TransformNuGetContent" BeforeTargets="Build" Condition="'$(NCrunch)' == ''">
     <ItemGroup>
-      <NuGetContentFiles Include="Content\**\*" />
+      <NuGetContentFiles Condition="'@(NuGetContentFiles)' == ''" Include="Content\**\*" />
     </ItemGroup>
     <NuGetContent Files="@(NuGetContentFiles)" />
   </Target>
