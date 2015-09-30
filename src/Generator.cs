@@ -65,6 +65,9 @@ namespace RDumont.NugetContentGenerator.Runtime
                 case "cs":
                     return new CsReplacementDefinitionsExtractor();
 
+                case "cshtml":
+                    return new CsHtmlReplacementDefinitionsExtractor();
+
                 default:
                     throw new InvalidOperationException(
                         string.Format("Don't know how to transform file with '.{0}' extension", extension));
