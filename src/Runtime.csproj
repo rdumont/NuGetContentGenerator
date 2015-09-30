@@ -53,12 +53,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="package.nuspec" />
-    <None Include="tools\install.ps1" />
-    <None Include="tools\TransformNuGetContent.targets" />
-    <None Include="tools\uninstall.ps1" />
+    <None Include="build\NuGetContentGenerator.targets" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\readme.txt" />
+    <Content Include="readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

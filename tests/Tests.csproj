@@ -56,7 +56,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Runtime\Runtime.csproj">
+    <ProjectReference Include="..\src\Runtime.csproj">
       <Project>{F7E1AAAE-7DEA-4ED6-B172-9B48F9E0EE09}</Project>
       <Name>Runtime</Name>
     </ProjectReference>
