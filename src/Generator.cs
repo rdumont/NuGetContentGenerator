@@ -1,4 +1,6 @@
-﻿namespace RDumont.NugetContentGenerator.Runtime
+﻿using RDumont.NugetContentGenerator.Runtime.Extractors;
+
+namespace RDumont.NugetContentGenerator.Runtime
 {
     using System;
     using System.Collections.Generic;

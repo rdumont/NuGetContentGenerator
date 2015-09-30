@@ -1,4 +1,6 @@
-﻿namespace RDumont.NugetContentGenerator.Runtime.Tests
+﻿using RDumont.NugetContentGenerator.Runtime.Extractors;
+
+namespace RDumont.NugetContentGenerator.Runtime.Tests
 {
     public class TestableCsExtractor : CsReplacementDefinitionsExtractor
     {

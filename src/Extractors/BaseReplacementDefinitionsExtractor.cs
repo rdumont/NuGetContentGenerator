@@ -1,8 +1,8 @@
-﻿namespace RDumont.NugetContentGenerator.Runtime
-{
-    using System.IO;
-    using System.Text;
+﻿using System.IO;
+using System.Text;
 
+namespace RDumont.NugetContentGenerator.Runtime.Extractors
+{
     public abstract class BaseReplacementDefinitionsExtractor : IReplacementDefinitionsExtractor
     {
         public string ExtractReplacementDefinitions(string originalText, out string replacementDefinitions)

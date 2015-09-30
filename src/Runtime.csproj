@@ -44,10 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseReplacementDefinitionsExtractor.cs" />
+    <Compile Include="Extractors\BaseReplacementDefinitionsExtractor.cs" />
     <Compile Include="Generator.cs" />
-    <Compile Include="CsReplacementDefinitionsExtractor.cs" />
-    <Compile Include="IReplacementDefinition.cs" />
+    <Compile Include="Extractors\CsReplacementDefinitionsExtractor.cs" />
+    <Compile Include="IReplacementDefinitionsExtractor.cs" />
     <Compile Include="NuGetContent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

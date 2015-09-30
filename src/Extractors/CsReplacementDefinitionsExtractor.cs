@@ -1,7 +1,7 @@
-﻿namespace RDumont.NugetContentGenerator.Runtime
-{
-    using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
+namespace RDumont.NugetContentGenerator.Runtime.Extractors
+{
     public class CsReplacementDefinitionsExtractor : BaseReplacementDefinitionsExtractor
     {
         protected override string GetReplacementLine(string line)
