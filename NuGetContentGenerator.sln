@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runtime", "Runtime\Runtime.csproj", "{F7E1AAAE-7DEA-4ED6-B172-9B48F9E0EE09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runtime", "src\Runtime.csproj", "{F7E1AAAE-7DEA-4ED6-B172-9B48F9E0EE09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{9C9A5EB0-62C2-4337-84FB-8123B207E266}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "tests\Tests.csproj", "{9C9A5EB0-62C2-4337-84FB-8123B207E266}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
