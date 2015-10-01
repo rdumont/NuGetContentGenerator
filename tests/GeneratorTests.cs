@@ -52,5 +52,18 @@ not a good line";
                 Throws.InvalidOperationException.With.Message
                     .EqualTo("Invalid replacement definition line: \"not a good line\""));
         }
+
+        [Test]
+        public void Null_definitions_block_should_return_empty()
+        {
+            // Arrange
+            var generator = new Generator();
+
+            // Act
+            var replacements = generator.GetReplacements(null);
+
+            // Assert
+            Assert.That(replacements, Is.Empty);
+        }
     }
 }

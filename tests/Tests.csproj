@@ -47,7 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extractors\CsHtmlReplacementDefinitionsExtractorTests.cs" />
     <Compile Include="Extractors\CsReplacementDefinitionsExtractorTests.cs" />
+    <Compile Include="Extractors\XmlReplacementDefinitionsExtractorTests.cs" />
     <Compile Include="GeneratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
