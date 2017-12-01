@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NuGetContentGenerator</id>
+    <title>NuGet Content Generator</title>
+    <version>$version$</version>
+    <authors>Rodrigo Dumont</authors>
+    <owners>Rodrigo Dumont</owners>
+    <projectUrl>http://github.com/rdumont/NuGetContentGenerator</projectUrl>
+    <licenseUrl>https://raw.github.com/rdumont/NuGetContentGenerator/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An MSBuild task to insert NuGet replacement tokens in C# files.</description>
+    <tags>nuget pp content</tags>
+    <releaseNotes>
+        Initial release
+    </releaseNotes>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\NuGetContentGenerator.dll" target="tools" />
+    <file src="build\NuGetContentGenerator.targets" target="build" />
+    <file src="readme.txt" target="" />
+  </files>
+</package>

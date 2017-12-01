@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runtime", "src\Runtime.csproj", "{F7E1AAAE-7DEA-4ED6-B172-9B48F9E0EE09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "tests\Tests.csproj", "{9C9A5EB0-62C2-4337-84FB-8123B207E266}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{118AB556-4369-4CEC-9D1D-DBFAB43F21AE}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		gulpfile.coffee = gulpfile.coffee
+		package.json = package.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7E1AAAE-7DEA-4ED6-B172-9B48F9E0EE09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7E1AAAE-7DEA-4ED6-B172-9B48F9E0EE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7E1AAAE-7DEA-4ED6-B172-9B48F9E0EE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7E1AAAE-7DEA-4ED6-B172-9B48F9E0EE09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C9A5EB0-62C2-4337-84FB-8123B207E266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C9A5EB0-62C2-4337-84FB-8123B207E266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C9A5EB0-62C2-4337-84FB-8123B207E266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C9A5EB0-62C2-4337-84FB-8123B207E266}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,6 +1,8 @@
 NuGet Content Generator
 =======================
 
+[![Build status](https://ci.appveyor.com/api/projects/status/6p7rqfa9otuen84v/branch/master?svg=true)](https://ci.appveyor.com/project/rdumont/nugetcontentgenerator/branch/master)
+
 An MSBuild task to insert replacement tokens in C# files.
 
 What does it do?
@@ -79,7 +81,7 @@ How do I install it?
 You can install it from NuGet, by looking for the `NuGetContentGenerator` package or running the following command in the Package Manager Console:
 
     PM> Install-Package NuGetContentGenerator
-    
+
 The package will then be installed and the project will automatically import the needed MSBuild targets. All that is left to do is build your project to see every `content\**\*.cs` be transformed to its NuGet content representation as `content\**\*.cs.pp`.
 
 Don't forget to add your content files to the Nuspec. Ideally, given the `.nuspec` is at the same level as the project, the content should be added as follows:
